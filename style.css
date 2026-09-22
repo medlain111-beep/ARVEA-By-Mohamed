@@ -526,4 +526,306 @@ footer{
     grid-template-columns:1fr;
   }
 
+}/* =========================================
+   ARVEA BY MOHAMED — PREMIUM UPGRADE
+   ========================================= */
+
+body{
+  background:
+    radial-gradient(circle at top right,rgba(49,92,69,.06),transparent 30%),
+    var(--cream);
+}
+
+/* تحسين الهيدر */
+
+.topbar{
+  box-shadow:0 4px 20px rgba(33,68,50,.06);
+}
+
+.nav{
+  min-height:78px;
+}
+
+.logo{
+  font-size:26px;
+  transition:.25s;
+}
+
+.logo:hover{
+  transform:translateY(-1px);
+}
+
+/* زر السلة */
+
+.cart{
+  box-shadow:0 7px 18px rgba(33,68,50,.18);
+  transition:.25s;
+}
+
+.cart:hover{
+  transform:translateY(-2px);
+  background:var(--green-dark);
+}
+
+/* تحسين القسم الرئيسي */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(255,255,255,.045);
+  top:-180px;
+  left:-120px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero-card{
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+
+.hero-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,.13);
+}
+
+/* الأزرار */
+
+.btn{
+  box-shadow:0 8px 20px rgba(96,69,47,.18);
+}
+
+.btn:active,
+.add:active,
+.cart:active{
+  transform:scale(.97);
+}
+
+/* الأقسام */
+
+.categories button{
+  min-height:58px;
+  position:relative;
+  overflow:hidden;
+}
+
+.categories button::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+  transform:translateX(-120%);
+  transition:.5s;
+}
+
+.categories button:hover::after{
+  transform:translateX(120%);
+}
+
+/* المنتجات */
+
+.card{
+  position:relative;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height:4px;
+  background:linear-gradient(
+    90deg,
+    var(--green),
+    var(--wood)
+  );
+  opacity:0;
+  transition:.25s;
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+.product-img{
+  min-height:210px;
+  position:relative;
+  overflow:hidden;
+}
+
+.product-img::before{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(255,255,255,.5);
+  filter:blur(2px);
+}
+
+.product-img{
+  transition:.3s;
+}
+
+.card:hover .product-img{
+  background:
+    radial-gradient(circle,rgba(255,255,255,.95),transparent 62%),
+    #e3eee5;
+}
+
+.card-body{
+  position:relative;
+}
+
+.tag{
+  border:1px solid rgba(138,104,72,.12);
+}
+
+.price{
+  font-size:21px;
+}
+
+/* زر إضافة للسلة */
+
+.add{
+  box-shadow:0 6px 14px rgba(33,68,50,.12);
+}
+
+.add:hover{
+  transform:translateY(-1px);
+  box-shadow:0 9px 18px rgba(33,68,50,.18);
+}
+
+/* البحث */
+
+.search{
+  box-shadow:0 6px 18px rgba(33,68,50,.05);
+  transition:.25s;
+}
+
+.search:focus{
+  box-shadow:0 0 0 4px rgba(49,92,69,.10);
+}
+
+/* العروض */
+
+.promo{
+  position:relative;
+  overflow:hidden;
+}
+
+.promo::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  background:rgba(255,255,255,.04);
+  left:-100px;
+  top:-150px;
+}
+
+.promo-inner{
+  position:relative;
+  z-index:1;
+}
+
+/* السلة */
+
+.cart-box{
+  box-shadow:0 8px 25px rgba(33,68,50,.06);
+}
+
+.cart-row{
+  align-items:center;
+}
+
+/* الفوتر */
+
+footer{
+  position:relative;
+  overflow:hidden;
+}
+
+.footer{
+  position:relative;
+  z-index:1;
+}
+
+/* تحسين الهاتف */
+
+@media(max-width:600px){
+
+  .container{
+    width:min(94%,520px);
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p:not(.eyebrow){
+    font-size:16px;
+  }
+
+  .categories{
+    gap:10px;
+  }
+
+  .categories button{
+    min-height:55px;
+    font-size:13px;
+  }
+
+  .product-img{
+    min-height:230px;
+  }
+
+  .card-body{
+    padding:18px;
+  }
+
+  .promo h2{
+    font-size:27px;
+  }
+
+  .order-actions .btn{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+/* حركة ظهور بسيطة */
+
+.card{
+  animation:cardAppear .5s ease both;
+}
+
+@keyframes cardAppear{
+  from{
+    opacity:0;
+    transform:translateY(12px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
