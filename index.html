@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARVEA by Mohamed - متجر منتجات الجمال والعناية">
+  <title>ARVEA by Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#">ARVEA <span>by Mohamed</span></a>
+    <nav>
+      <a href="#products">المنتجات</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#offers">العروض</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="cart" href="#cart">🛒 السلة <b id="cartCount">0</b></a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div>
+      <p class="eyebrow">BEAUTY • CARE • WELLNESS</p>
+      <h1>جمالك يبدأ من<br><strong>اختيارك الصحيح</strong></h1>
+      <p>اكتشف منتجات ARVEA للعناية والجمال، واختر ما يناسبك بسهولة.</p>
+      <a class="btn" href="#products">تصفح المنتجات</a>
+    </div>
+    <div class="hero-card">
+      <span>ARVEA</span>
+      <strong>عروض مميزة</strong>
+      <small>سيتم إضافة المنتجات والأسعار تدريجيًا</small>
+    </div>
+  </div>
+</section>
+
+<section id="categories" class="section">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>تسوق حسب القسم</h2></div></div>
+    <div class="categories">
+      <button onclick="filterProducts('all')">✨ الكل</button>
+      <button onclick="filterProducts('skin')">🌸 العناية بالبشرة</button>
+      <button onclick="filterProducts('hair')">💆 العناية بالشعر</button>
+      <button onclick="filterProducts('body')">🧴 العناية بالجسم</button>
+      <button onclick="filterProducts('perfume')">🌹 العطور</button>
+      <button onclick="filterProducts('offers')">🏷️ العروض</button>
+    </div>
+  </div>
+</section>
+
+<section id="offers" class="promo">
+  <div class="container promo-inner">
+    <div><p class="eyebrow">SPECIAL OFFERS</p><h2>عروض ومنتجات مختارة</h2><p>هذه المنطقة جاهزة لإضافة العروض الجديدة لاحقًا.</p></div>
+    <a class="btn light" href="#products">اكتشف الآن</a>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow">OUR PRODUCTS</p><h2>منتجات المتجر</h2></div>
+      <input id="search" class="search" type="search" placeholder="ابحث عن منتج..." oninput="renderProducts()">
+    </div>
+    <div id="productGrid" class="grid"></div>
+  </div>
+</section>
+
+<section id="cart" class="section cart-section">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">YOUR ORDER</p><h2>سلة المشتريات</h2></div></div>
+    <div id="cartItems" class="cart-box">السلة فارغة حاليًا.</div>
+    <div class="order-actions">
+      <a id="whatsappBtn" class="btn whatsapp" target="_blank" href="https://wa.me/213797072478">اطلب عبر WhatsApp</a>
+      <a class="btn secondary" href="tel:0797072478">اتصل بنا</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container footer">
+    <div><div class="logo">ARVEA <span>by Mohamed</span></div><p>متجر إلكتروني للجمال والعناية في الجزائر.</p></div>
+    <div><strong>الطلب والتواصل</strong><p>0797 07 24 78</p><p>WhatsApp متاح للطلبات والاستفسارات</p></div>
+  </div>
+  <div class="copyright">© 2026 ARVEA by Mohamed — جميع الحقوق محفوظة</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
