@@ -240,7 +240,7 @@ function renderProducts() {
 
   grid.innerHTML = list.map(function (product) {
     return `
-      <article class="card">
+<article class="card ${product.cat === "hair" ? "hair-card" : ""}">
 
         <div class="product-img">
           <img
