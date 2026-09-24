@@ -438,35 +438,24 @@ footer{
     text-align:center;
   }
 }
-/* ===== العناية بالشعر - ألواح خشب فحمية ===== */
+/* ===== خلفية العناية بالشعر ===== */
 .hair-card{
-  background:
-    linear-gradient(
-      rgba(35,37,33,.45),
-      rgba(35,37,33,.45)
-    ),
-    repeating-linear-gradient(
-      0deg,
-      #55564f 0px,
-      #55564f 7px,
-      #353731 8px,
-      #353731 13px,
-      #60615a 14px,
-      #44453f 21px,
-      #292b27 22px,
-      #292b27 27px,
-      #4d4e47 28px,
-      #4d4e47 36px
-    );
+  background-image:url("hair-background.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 
-  border:1px solid rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.18);
 }
 
+/* جعل منطقة صورة المنتج شفافة حتى تظهر خلفية الخشب حولها */
 .hair-card .product-img{
-  background:rgba(255,255,255,.04);
+  background:rgba(255,255,255,.06);
 }
 
+/* معلومات المنتج */
 .hair-card .card-body{
+  background:rgba(20,20,18,.55);
   color:white;
 }
 
@@ -475,6 +464,6 @@ footer{
 }
 
 .hair-card .tag{
-  background:rgba(168,198,134,.22);
-  color:#d8e8c5;
+  background:rgba(50,70,40,.75);
+  color:#e0ebd0;
 }
