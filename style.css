@@ -440,7 +440,7 @@ footer{
 }
 /* ===== خلفية العناية بالشعر ===== */
 .hair-card{
-  background-image:url("hair-background.jpg");
+background-image:url("hair-background.jpg.PNG");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
