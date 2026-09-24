@@ -150,13 +150,13 @@ async function loadProducts() {
 
     const files = await response.json();
 
-    const imageFiles = files.filter(function (file) {
-      return (
-        file.type === "file" &&
-        /\.(jpg|jpeg|png|webp)$/i.test(file.name)
-      );
-    });
-
+  const imageFiles = files.filter(function (file) {
+  return (
+    file.type === "file" &&
+    /\.(jpg|jpeg|png|webp)$/i.test(file.name) &&
+    file.name !== "hair-background.jpg.PNG"
+  );
+});
     products = imageFiles.map(function (file, index) {
       const category = detectCategory(file.name);
 
