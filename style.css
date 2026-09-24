@@ -438,23 +438,27 @@ footer{
     text-align:center;
   }
 }
-/* ===== العناية بالشعر ===== */
+/* ===== العناية بالشعر - خشب أسود طبيعي ===== */
 .hair-card{
   background:
-    linear-gradient(rgba(20,25,22,.82),rgba(20,25,22,.82)),
+    linear-gradient(
+      rgba(28,30,27,.72),
+      rgba(28,30,27,.72)
+    ),
     repeating-linear-gradient(
       0deg,
-      #20231f 0px,
-      #292c27 8px,
-      #171a17 16px,
-      #252923 24px
+      #4a4a43 0px,
+      #3d3e38 12px,
+      #55564e 24px,
+      #34352f 36px,
+      #474841 48px
     );
 
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
 }
 
 .hair-card .product-img{
-  background:transparent;
+  background:rgba(255,255,255,.04);
 }
 
 .hair-card .card-body{
@@ -466,6 +470,6 @@ footer{
 }
 
 .hair-card .tag{
-  background:rgba(168,198,134,.18);
-  color:#d2e5bd;
+  background:rgba(168,198,134,.22);
+  color:#d8e8c5;
 }
