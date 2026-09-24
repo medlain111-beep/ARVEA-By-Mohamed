@@ -438,3 +438,34 @@ footer{
     text-align:center;
   }
 }
+/* ===== العناية بالشعر ===== */
+.hair-card{
+  background:
+    linear-gradient(rgba(20,25,22,.82),rgba(20,25,22,.82)),
+    repeating-linear-gradient(
+      0deg,
+      #20231f 0px,
+      #292c27 8px,
+      #171a17 16px,
+      #252923 24px
+    );
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.hair-card .product-img{
+  background:transparent;
+}
+
+.hair-card .card-body{
+  color:white;
+}
+
+.hair-card h3{
+  color:white;
+}
+
+.hair-card .tag{
+  background:rgba(168,198,134,.18);
+  color:#d2e5bd;
+}
