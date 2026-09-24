@@ -263,13 +263,21 @@ a{
 }
 
 .product-img{
-  aspect-ratio:1/1;
+  aspect-ratio:1 / 1;
   background:#eee5df;
-  display:grid;
-  place-items:center;
-  color:#8d7b74;
-  font-weight:800;
-  font-size:22px
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
 }
 
 .card-body{
