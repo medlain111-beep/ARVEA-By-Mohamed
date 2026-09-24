@@ -32,19 +32,23 @@ function detectCategory(name) {
     return "perfume";
   }
 
-  if (
-    n.includes("shampoo") ||
-    n.includes("shampoing") ||
-    n.includes("hair") ||
-    n.includes("cheveux") ||
-    n.includes("huile") ||
-    n.includes("oil") ||
-    n.includes("olymiel") ||
-    n.includes("capillaire")
-  ) {
-    return "hair";
-  }
-
+ if (
+  n.includes("shampoo") ||
+  n.includes("shampoing") ||
+  n.includes("hair") ||
+  n.includes("cheveux") ||
+  n.includes("huile") ||
+  n.includes("oil") ||
+  n.includes("olymiel") ||
+  n.includes("capillaire") ||
+  n.includes("color") ||
+  n.includes("coloration") ||
+  n.includes("blond") ||
+  n.includes("teinture") ||
+  n.includes("amcolor")
+) {
+  return "hair";
+}
   if (
     n.includes("savon") ||
     n.includes("gel douche") ||
