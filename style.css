@@ -467,3 +467,109 @@ background-image:url("hair-background.jpg.PNG");
   background:rgba(50,70,40,.75);
   color:#e0ebd0;
 }
+/* ===== بطاقات الفروع الجديدة ===== */
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  margin-top:10px;
+}
+
+.category-card{
+  position:relative;
+  min-height:190px;
+  border:0 !important;
+  border-radius:16px !important;
+  padding:20px !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+  overflow:hidden;
+  color:white !important;
+  box-shadow:0 5px 15px rgba(0,0,0,.12);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.category-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.category-icon{
+  font-size:48px;
+  margin-bottom:12px;
+  line-height:1;
+}
+
+.category-card strong{
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+.category-card small{
+  font-size:12px;
+  opacity:.95;
+}
+
+/* خلفيات متنوعة لكل فرع */
+
+.category-hair{
+  background:linear-gradient(135deg,#151515,#3a3029);
+}
+
+.category-skin{
+  background:linear-gradient(135deg,#eee3d4,#d5b99b);
+}
+
+.category-perfume{
+  background:linear-gradient(135deg,#7a5235,#b47a4a);
+}
+
+.category-body{
+  background:linear-gradient(135deg,#315c45,#58734c);
+}
+
+.category-makeup{
+  background:linear-gradient(135deg,#8b5969,#c38b9d);
+}
+
+.category-health{
+  background:linear-gradient(135deg,#5b7350,#8ca66e);
+}
+
+.category-offers{
+  background:linear-gradient(135deg,#6b4f3a,#a47b55);
+}
+
+/* الهاتف */
+
+@media(max-width:600px){
+
+  .categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .category-card{
+    min-height:155px;
+    padding:14px !important;
+  }
+
+  .category-icon{
+    font-size:38px;
+    margin-bottom:9px;
+  }
+
+  .category-card strong{
+    font-size:15px;
+  }
+
+  .category-card small{
+    font-size:10px;
+  }
+
+}
