@@ -38,18 +38,51 @@
 </section>
 
 <section id="categories" class="section">
-  <div class="container">
-    <div class="section-head"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>تسوق حسب القسم</h2></div></div>
-    <div class="categories">
-      <button onclick="filterProducts('all')">✨ الكل</button>
-      <button onclick="filterProducts('skin')">🌸 العناية بالبشرة</button>
-      <button onclick="filterProducts('hair')">💆 العناية بالشعر</button>
-      <button onclick="filterProducts('body')">🧴 العناية بالجسم</button>
-      <button onclick="filterProducts('perfume')">🌹 العطور</button>
-      <button onclick="filterProducts('offers')">🏷️ العروض</button>
-    </div>
-  </div>
-</section>
+<div class="categories">
+
+  <button class="category-card category-hair" onclick="filterProducts('hair')">
+    <span class="category-icon">💇‍♀️</span>
+    <strong>العناية بالشعر</strong>
+    <small>شعر صحي وجمال طبيعي</small>
+  </button>
+
+  <button class="category-card category-skin" onclick="filterProducts('skin')">
+    <span class="category-icon">🌸</span>
+    <strong>العناية بالبشرة</strong>
+    <small>بشرة نضرة ومتألقة</small>
+  </button>
+
+  <button class="category-card category-perfume" onclick="filterProducts('perfume')">
+    <span class="category-icon">🌹</span>
+    <strong>العطور</strong>
+    <small>رائحة تروي قصتك</small>
+  </button>
+
+  <button class="category-card category-body" onclick="filterProducts('body')">
+    <span class="category-icon">🧴</span>
+    <strong>العناية بالجسم</strong>
+    <small>جسم أكثر نظارة كل يوم</small>
+  </button>
+
+  <button class="category-card category-makeup" onclick="filterProducts('makeup')">
+    <span class="category-icon">💄</span>
+    <strong>المكياج</strong>
+    <small>لمسة جمالك الخاصة</small>
+  </button>
+
+  <button class="category-card category-health" onclick="filterProducts('health')">
+    <span class="category-icon">❤️</span>
+    <strong>الصحة</strong>
+    <small>العناية بصحتك يوميًا</small>
+  </button>
+
+  <button class="category-card category-offers" onclick="filterProducts('offers')">
+    <span class="category-icon">🎁</span>
+    <strong>العروض</strong>
+    <small>اختيارات مميزة بأسعار أفضل</small>
+  </button>
+
+</div>
 
 <section id="offers" class="promo">
   <div class="container promo-inner">
