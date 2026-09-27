@@ -706,3 +706,67 @@ background-image:url("hair-background.jpg.PNG");
   }
 
 }
+/* ===== صور أقسام المتجر ===== */
+
+.category-card{
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden;
+  background-size:100% 100% !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  min-height:150px;
+}
+
+/* إخفاء المحتوى القديم لأن النص والرمز موجودان داخل الصور */
+.category-card .category-icon,
+.category-card strong,
+.category-card small{
+  display:none !important;
+}
+
+/* صور الأقسام */
+
+.category-hair{
+  background-image:url("hair-category.png") !important;
+}
+
+.category-skin{
+  background-image:url("skin-category.png") !important;
+}
+
+.category-perfume{
+  background-image:url("perfume-category.png") !important;
+}
+
+.category-body{
+  background-image:url("body-category.png") !important;
+}
+
+.category-makeup{
+  background-image:url("makeup-category.png") !important;
+}
+
+.category-health{
+  background-image:url("health-category.png") !important;
+}
+
+.category-offers{
+  background-image:url("offers-category.png") !important;
+}
+
+/* الهاتف: قسمان في كل سطر */
+
+@media(max-width:600px){
+
+  .categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .category-card{
+    min-height:135px;
+    border-radius:14px !important;
+  }
+
+}
