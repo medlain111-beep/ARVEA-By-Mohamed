@@ -15,6 +15,184 @@ let cart = [];
 function detectCategory(name) {
   const n = name.toLowerCase();
 
+  // =========================
+  // العطور
+  // =========================
+  if (
+    n.includes("parfum") ||
+    n.includes("perfume") ||
+    n.includes("eau de parfum") ||
+    n.includes("velvet") ||
+    n.includes("glamour") ||
+    n.includes("harem") ||
+    n.includes("gentleman") ||
+    n.includes("girl") ||
+    n.includes("actor") ||
+    n.includes("audace") ||
+    n.includes("alura") ||
+    n.includes("aldan") ||
+    n.includes("mystery") ||
+    n.includes("veloria") ||
+    n.includes("vulcanis")
+  ) {
+    return "perfume";
+  }
+
+  // =========================
+  // العناية بالشعر
+  // =========================
+  if (
+    n.includes("shampoo") ||
+    n.includes("shampoing") ||
+    n.includes("hair") ||
+    n.includes("cheveux") ||
+    n.includes("capillaire") ||
+    n.includes("coloration") ||
+    n.includes("teinture") ||
+    n.includes("amcolor") ||
+    n.includes("color") ||
+    n.includes("blond") ||
+    n.includes("anti-chute") ||
+    n.includes("antichute") ||
+    n.includes("masque cheveux") ||
+    n.includes("huile cheveux")
+  ) {
+    return "hair";
+  }
+
+  // =========================
+  // العناية بالجسم
+  // =========================
+  if (
+    n.includes("body") ||
+    n.includes("corps") ||
+    n.includes("savon") ||
+    n.includes("gel douche") ||
+    n.includes("gel-douche") ||
+    n.includes("shower") ||
+    n.includes("lait de douche") ||
+    n.includes("body butter") ||
+    n.includes("body splash") ||
+    n.includes("gommage corps") ||
+    n.includes("gommage corporel") ||
+    n.includes("deodorant") ||
+    n.includes("déodorant") ||
+    n.includes("roll-on") ||
+    n.includes("roll on") ||
+    n.includes("recharge-roll-on") ||
+    n.includes("anti moustique") ||
+    n.includes("anti-moustique")
+  ) {
+    return "body";
+  }
+
+  // =========================
+  // المكياج
+  // =========================
+  if (
+    n.includes("makeup") ||
+    n.includes("maquillage") ||
+    n.includes("lipstick") ||
+    n.includes("lip gloss") ||
+    n.includes("lipgloss") ||
+    n.includes("lip balm") ||
+    n.includes("baume levres") ||
+    n.includes("baume lèvres") ||
+    n.includes("foundation") ||
+    n.includes("fond de teint") ||
+    n.includes("concealer") ||
+    n.includes("correcteur") ||
+    n.includes("mascara") ||
+    n.includes("eyeliner") ||
+    n.includes("eye liner") ||
+    n.includes("eyeshadow") ||
+    n.includes("fard") ||
+    n.includes("blush") ||
+    n.includes("rouge") ||
+    n.includes("crayon") ||
+    n.includes("bb cream")
+  ) {
+    return "makeup";
+  }
+
+  // =========================
+  // الصحة
+  // =========================
+  if (
+    n.includes("ashwagandha") ||
+    n.includes("ashwaghanda") ||
+    n.includes("collagen") ||
+    n.includes("spirulina") ||
+    n.includes("psyllium") ||
+    n.includes("slim") ||
+    n.includes("fiber") ||
+    n.includes("fibre") ||
+    n.includes("vitamin") ||
+    n.includes("vitamine") ||
+    n.includes("omega") ||
+    n.includes("magnesium") ||
+    n.includes("zinc") ||
+    n.includes("sleep") ||
+    n.includes("seven x") ||
+    n.includes("protein") ||
+    n.includes("shaker") ||
+    n.includes("push up") ||
+    n.includes("coup faim") ||
+    n.includes("bain de bouche") ||
+    n.includes("dentifrice")
+  ) {
+    return "health";
+  }
+
+  // =========================
+  // العناية بالبشرة
+  // =========================
+  if (
+    n.includes("skin") ||
+    n.includes("visage") ||
+    n.includes("face") ||
+    n.includes("anti tache") ||
+    n.includes("anti-tache") ||
+    n.includes("tache") ||
+    n.includes("serum") ||
+    n.includes("sérum") ||
+    n.includes("gel nettoyant") ||
+    n.includes("gel-nettoyant") ||
+    n.includes("nettoyant") ||
+    n.includes("moistur") ||
+    n.includes("hydrat") ||
+    n.includes("sun protect") ||
+    n.includes("sun protection") ||
+    n.includes("écran solaire") ||
+    n.includes("ecran solaire") ||
+    n.includes("spf") ||
+    n.includes("anti age") ||
+    n.includes("anti-age") ||
+    n.includes("anti aging")
+  ) {
+    return "skin";
+  }
+
+  // =========================
+  // العروض
+  // =========================
+  if (
+    n.includes("offer") ||
+    n.includes("offre") ||
+    n.includes("promo") ||
+    n.includes("promotion") ||
+    n.includes("pack") ||
+    n.includes("coffret") ||
+    n.includes("box")
+  ) {
+    return "offers";
+  }
+
+  // إذا لم نتعرف على المنتج
+  return "skin";
+}
+  const n = name.toLowerCase();
+
   if (
     n.includes("parfum") ||
     n.includes("perfume") ||
