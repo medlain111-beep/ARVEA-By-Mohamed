@@ -10,7 +10,26 @@ const GITHUB_RAW =
 let products = [];
 let active = "all";
 let cart = [];
+// أسعار المنتجات
+const productPrices = {
 
+  // أمثلة (عدّل الأسماء حسب أسماء الصور عندك)
+
+  "veloria": 4500,
+  "vulcanis": 4200,
+  "mystery": 3900,
+  "gentleman": 4800,
+
+  "ashwagandha": 3500,
+  "collagen": 3900,
+  "spirulina": 2800,
+
+  "shampoo": 1800,
+  "amcolor": 1200,
+
+  "serum": 2200,
+  "bb cream": 2400
+};
 // تحديد قسم المنتج تلقائيًا من اسم الصورة
 function detectCategory(name) {
   const n = name.toLowerCase();
@@ -203,7 +222,18 @@ function categoryName(category) {
 
   return names[category] || "منتجات ARVEA";
 }
+function getProductPrice(productName) {
 
+  const name = productName.toLowerCase();
+
+  for (const key in productPrices) {
+    if (name.includes(key.toLowerCase())) {
+      return productPrices[key];
+    }
+  }
+
+  return null;
+}
 function formatPrice(price) {
   if (price === null || price === undefined) {
     return "السعر عند الطلب";
@@ -268,7 +298,7 @@ async function loadProducts() {
         name: file.name.replace(/\.[^.]+$/, ""),
         cat: category,
         tag: categoryName(category),
-        price: null,
+        price: getProductPrice(file.name),,
         image: GITHUB_RAW + encodeURIComponent(file.name).replace(/%2F/g, "/")
       };
     });
