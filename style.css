@@ -747,3 +747,7 @@ background-image:url("hair-background.jpg.PNG");
   }
 
 }
+/* إزالة دائرة الأيقونة القديمة */
+.category-card::before{
+  display:none !important;
+}
