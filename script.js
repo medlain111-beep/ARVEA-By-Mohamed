@@ -283,12 +283,63 @@ async function loadProducts() {
 
     const files = await response.json();
 
-  const imageFiles = files.filter(function (file) {
+ const imageFiles = files.filter(function (file) {
   return (
     file.type === "file" &&
     /\.(jpg|jpeg|png|webp)$/i.test(file.name) &&
     file.name !== "hair-background.jpg.PNG"
   );
+});
+
+// تصفية الصور المكررة الواضحة دون حذف أي ملف من GitHub
+function duplicateKey(filename) {
+  return filename
+    .replace(/\.[^.]+$/, "")
+    .toLowerCase()
+    .replace(/[()]/g, " ")
+    .replace(/[_-]+/g, " ")
+    .replace(/\b(ancien|new|opened|closed|front|back|top|prespective|perspective)\b/g, " ")
+    .replace(/\bcap\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\s+\d+$/, "");
+}
+
+function duplicateScore(filename) {
+  const n = filename.toLowerCase();
+  let score = 0;
+
+  if (n.includes("new")) score += 5;
+  if (n.includes("2026")) score += 4;
+  if (n.includes("2025")) score += 3;
+  if (n.includes("ancien")) score -= 5;
+  if (n.includes("opened") || n.includes("closed")) score -= 2;
+  if (n.includes("front") || n.includes("back") || n.includes("top")) score -= 1;
+  if (n.includes("perspective") || n.includes("prespective")) score -= 1;
+
+  return score;
+}
+
+const uniqueFiles = [];
+
+imageFiles.forEach(function (file) {
+  const key = duplicateKey(file.name);
+
+  const existingIndex = uniqueFiles.findIndex(function (item) {
+    return duplicateKey(item.name) === key;
+  });
+
+  if (existingIndex === -1) {
+    uniqueFiles.push(file);
+    return;
+  }
+
+  if (
+    duplicateScore(file.name) >
+    duplicateScore(uniqueFiles[existingIndex].name)
+  ) {
+    uniqueFiles[existingIndex] = file;
+  }
 });
     products = imageFiles.map(function (file, index) {
       const category = detectCategory(file.name);
