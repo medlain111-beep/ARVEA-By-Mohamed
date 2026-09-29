@@ -341,7 +341,7 @@ imageFiles.forEach(function (file) {
     uniqueFiles[existingIndex] = file;
   }
 });
-    products = imageFiles.map(function (file, index) {
+   products = uniqueFiles.map(function (file, index) {
       const category = detectCategory(file.name);
 
       return {
@@ -349,7 +349,7 @@ imageFiles.forEach(function (file) {
         name: file.name.replace(/\.[^.]+$/, ""),
         cat: category,
         tag: categoryName(category),
-        price: getProductPrice(file.name),,
+        price: getProductPrice(file.name),
         image: GITHUB_RAW + encodeURIComponent(file.name).replace(/%2F/g, "/")
       };
     });
