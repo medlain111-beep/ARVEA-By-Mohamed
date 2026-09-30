@@ -13,22 +13,248 @@ let cart = [];
 // أسعار المنتجات
 const productPrices = {
 
-  // أمثلة (عدّل الأسماء حسب أسماء الصور عندك)
+  // =========================
+  // العطور
+  // =========================
+  "parfum collection nude": 4300,
+  "parfum collection pink": 4300,
+  "parfum collection apricot": 4300,
+  "parfum alura": 3100,
+  "parfum harem": 4300,
+  "parfum vulcanis": 3100,
+  "parfum gentleman": 4450,
+  "parfum aldan": 3100,
+  "parfum boy": 3050,
+  "parfum audace": 3100,
+  "parfum veloria": 3100,
+  "parfum actor": 3100,
+  "parfum girl": 3100,
+  "parfum glamour": 3100,
+  "parfum velvet bloom": 3100,
+  "parfum insolite": 4100,
+  "parfum inspiration": 4100,
+  "parfum l_eclat": 4100,
+  "parfum l_extreme": 4100,
+  "parfum homme moderne": 4100,
+  "parfum oriental men": 4100,
+  "parfum oriental women": 4100,
+  "parfum free spirit": 4100,
 
-  "veloria": 4500,
-  "vulcanis": 4200,
-  "mystery": 3900,
-  "gentleman": 4800,
+  "harem box": 5600,
+  "gentleman box": 5500,
 
-  "ashwagandha": 3500,
-  "collagen": 3900,
-  "spirulina": 2800,
+  "body splash queen flower": 2050,
+  "body splash crunchy caramel": 2050,
+  "body splash sweet crambola": 2050,
+  "body splash sweet carambola": 2050,
 
-  "shampoo": 1800,
-  "amcolor": 1200,
+  // =========================
+  // العناية بالبشرة
+  // =========================
+  "anti tache cream": 3450,
+  "bb cream": 3350,
+  "face serum hydra deep": 5400,
+  "creme visage peaux seche": 3450,
+  "creme de jour for men": 1900,
+  "creme de jour 50": 2050,
+  "creme de nuit 50": 2750,
 
-  "serum": 2200,
-  "bb cream": 2400
+  "cleansing foam hydra deep": 2400,
+  "mousse nettoyante visage": 2400,
+  "eau-micellaire": 2150,
+  "micellar": 2150,
+  "cleansing gel": 1250,
+  "mask exfoliant": 2100,
+  "exfoliating mask": 2100,
+
+  "after sun": 900,
+  "invisible sunscreen": 3600,
+  "invisible sun fluid": 3100,
+  "invisible sunscreen lotion": 4150,
+  "brume rafra": 900,
+
+  "intimate gel": 1050,
+  "after shave": 950,
+  "slimming gel": 2500,
+  "push-up cream": 2850,
+
+  // =========================
+  // العناية بالجسم
+  // =========================
+  "body cream miracle": 2100,
+  "creme miracle 250": 2100,
+  "creme miracle - mini": 900,
+
+  "body butter fruited": 1050,
+  "body butter fresh": 1050,
+  "body butter sugar kiss": 1050,
+  "royal butter": 1200,
+
+  "body lotion sweet carambola": 1550,
+  "body lotion queen flower": 1550,
+  "body lotion crunchy caramel": 1550,
+
+  "creme mains flower bloom": 900,
+  "creme mains ocean bloom": 900,
+  "creme mains oriental bloom": 900,
+  "creme pieds": 1000,
+
+  "aloe vera gel": 1850,
+  "argan oil 30": 2800,
+
+  "pain relief cream 100": 1300,
+  "pain relief cream 200": 2150,
+
+  "mosquito repellent pure defense": 1450,
+  "anti moustiques pure defense": 1450,
+  "anti moustique": 800,
+  "anti-moustiques": 800,
+
+  // =========================
+  // النظافة والاستحمام
+  // =========================
+  "roll-on soft sensation": 1050,
+  "roll-on citrus": 1050,
+  "roll-on recharge agrumes": 750,
+  "roll-on vanilla": 1050,
+  "roll-on recharge vanilla": 750,
+  "roll-on recharge soft sensation": 750,
+  "roll-on ocean": 1050,
+  "roll-on recharge ocean": 750,
+  "roll-on miracle": 1050,
+  "roll-on recharge miracle": 750,
+  "roll-on fresh sensation": 1050,
+  "roll-on recharge fresh sensation": 750,
+
+  "cooling shower gel": 1150,
+  "shower gel ocean": 1100,
+  "shower gel oriental": 1100,
+  "shower gel tropical cocktail mangue": 1100,
+  "shower gel tropical cocktail coco": 1100,
+  "shower gel mojito": 1100,
+  "shower gel vanilla": 1100,
+
+  "black soap": 1550,
+  "honey and wheat bran soap": 620,
+  "miracle soap": 1050,
+  "shea soap": 560,
+  "soft soap": 620,
+  "aloe vera soap": 560,
+  "argan oil soap": 560,
+  "miracle massage soap": 990,
+
+  // =========================
+  // العناية بالشعر
+  // =========================
+  "care & repaire shampoo": 1790,
+  "care & repair shampoo": 1790,
+  "care & repaire shampoo 2026": 1790,
+  "care & repair shampoo 2026": 1790,
+
+  "care & repaire mask": 1850,
+  "care & repair - sulfate-free mask": 1850,
+  "care & repaire mask 2026": 1850,
+
+  "masque nourrissant sans sulfat": 1350,
+  "masque-cheveux-nourissant": 1350,
+
+  "oil replacement": 1400,
+  "protective hair oil": 2500,
+  "protective hair cream": 1850,
+  "men's hair styling cream": 1200,
+
+  "anti hairfall shampoo": 1300,
+  "anti-dandruff shampoo": 1200,
+  "dry hair shampoo": 1050,
+  "oily hair shampoo": 1050,
+
+  // صبغات الشعر الأساسية 1200 دج
+  "light natural brown": 1200,
+  "platinum blonde": 1200,
+  "light natural blonde": 1200,
+  "dark natural blonde": 1200,
+  "natural blonde": 1200,
+  "very light natural blonde": 1200,
+  "light beige blonde": 1200,
+  "intense dark red blonde": 1200,
+  "extra creamy chocolate": 1200,
+  "very light beige blonde": 1200,
+  "sand blonde": 1200,
+  "very light sand blonde": 1200,
+  "very light violet ash blonde": 1200,
+  "intense platinum ash blonde": 1200,
+  "light violet brown": 1200,
+  "platinum ash blonde": 1200,
+  "intense very light ash blonde": 1200,
+  "light sand blonde": 1200,
+  "intense light ash blonde": 1200,
+  "intense ash blonde": 1200,
+  "ash blonde": 1200,
+  "light ash blonde": 1200,
+  "intense very light blonde": 1200,
+  "intense red blonde": 1200,
+  "super platinum blonde": 1200,
+  "platinum violet ash blonde": 1200,
+  "very light ash blonde": 1200,
+  "intense platinum blonde": 1200,
+
+  // =========================
+  // المكياج
+  // =========================
+  "lipgloss glossy 1": 1250,
+  "lipgloss glossy 2": 1250,
+  "lipgloss glossy 3": 1250,
+
+  "lipgloss mat 1": 1250,
+  "lipgloss mat 2": 1250,
+  "lipgloss mat 3": 1250,
+  "lipgloss mat 4": 1250,
+  "lipgloss mat 5": 1250,
+
+  "lipgloss semi mat 1": 1250,
+  "lipgloss semi mat 2": 1250,
+  "lipgloss semi mat 3": 1250,
+  "lipgloss semi mat 4": 1250,
+  "lipgloss semi mat 5": 1250,
+
+  "baume levres intense": 1050,
+  "baume a levre intense": 1050,
+  "lip balm": 950,
+
+  "so glam": 1500,
+  "mascara long lash vegan": 2000,
+
+  "concealer cn1": 1500,
+  "concealer cn2": 1500,
+  "concealer cn4": 1500,
+
+  "so perfect foundation": 2050,
+
+  "fond de teint beige ivoire": 3650,
+  "fond de teint beige ble": 3650,
+  "fond de teint beige rose": 3650,
+
+  // =========================
+  // الصحة والمكملات
+  // =========================
+  "seven x slim boost": 4100,
+  "ashwagandha": 4150,
+  "ashwaghanda": 4150,
+  "seven x protein chocolate": 4950,
+  "seven x protein cookies": 4950,
+  "7x protein": 4950,
+  "multivitamins": 2200,
+  "seven x fiber": 3650,
+  "seven x fibre": 3650,
+  "deven x psyllium": 3650,
+  "collagen": 4600,
+  "sleep & zen": 1550,
+  "slimy 3": 2750,
+  "spirulina": 2500,
+  "tri maca": 3650,
+  "coup faim": 2250,
+  "bain de bouche": 1350,
+  "dentifrice": 1250
 };
 // تحديد قسم المنتج تلقائيًا من اسم الصورة
 function detectCategory(name) {
