@@ -243,112 +243,17 @@ const productPrices = {
   "coup faim": 2250
 };
 // تحديد قسم المنتج تلقائيًا من اسم الصورة
+// تحديد قسم المنتج تلقائيًا من اسم الصورة
 function detectCategory(name) {
-  const n = name.toLowerCase();
+  const n = name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
   // =========================
-  // العطور
+  // الصحة والمكملات
   // =========================
-  if (
-    n.includes("parfum") ||
-    n.includes("perfume") ||
-    n.includes("eau de parfum") ||
-    n.includes("velvet") ||
-    n.includes("glamour") ||
-    n.includes("harem") ||
-    n.includes("gentleman") ||
-    n.includes("girl") ||
-    n.includes("actor") ||
-    n.includes("audace") ||
-    n.includes("alura") ||
-    n.includes("aldan") ||
-    n.includes("mystery") ||
-    n.includes("veloria") ||
-    n.includes("vulcanis")
-  ) {
-    return "perfume";
-  }
-
-  // =========================
-  // العناية بالشعر
-  // =========================
-  if (
-    n.includes("shampoo") ||
-    n.includes("shampoing") ||
-    n.includes("hair") ||
-    n.includes("cheveux") ||
-    n.includes("capillaire") ||
-    n.includes("coloration") ||
-    n.includes("teinture") ||
-    n.includes("amcolor") ||
-    n.includes("color") ||
-    n.includes("blond") ||
-    n.includes("anti-chute") ||
-    n.includes("antichute") ||
-    n.includes("masque cheveux") ||
-    n.includes("huile cheveux")
-  ) {
-    return "hair";
-  }
-
-  // =========================
-  // العناية بالجسم
-  // =========================
-  if (
-    n.includes("body") ||
-    n.includes("corps") ||
-    n.includes("savon") ||
-    n.includes("gel douche") ||
-    n.includes("gel-douche") ||
-    n.includes("shower") ||
-    n.includes("lait de douche") ||
-    n.includes("body butter") ||
-    n.includes("body splash") ||
-    n.includes("gommage corps") ||
-    n.includes("gommage corporel") ||
-    n.includes("deodorant") ||
-    n.includes("déodorant") ||
-    n.includes("roll-on") ||
-    n.includes("roll on") ||
-    n.includes("recharge-roll-on") ||
-    n.includes("anti moustique") ||
-    n.includes("anti-moustique")
-  ) {
-    return "body";
-  }
-
-  // =========================
-  // المكياج
-  // =========================
-  if (
-    n.includes("makeup") ||
-    n.includes("maquillage") ||
-    n.includes("lipstick") ||
-    n.includes("lip gloss") ||
-    n.includes("lipgloss") ||
-    n.includes("lip balm") ||
-    n.includes("baume levres") ||
-    n.includes("baume lèvres") ||
-    n.includes("foundation") ||
-    n.includes("fond de teint") ||
-    n.includes("concealer") ||
-    n.includes("correcteur") ||
-    n.includes("mascara") ||
-    n.includes("eyeliner") ||
-    n.includes("eye liner") ||
-    n.includes("eyeshadow") ||
-    n.includes("fard") ||
-    n.includes("blush") ||
-    n.includes("rouge") ||
-    n.includes("crayon") ||
-    n.includes("bb cream")
-  ) {
-    return "makeup";
-  }
-
-  // =========================
-  // الصحة
-  // =========================
+  // نضع الصحة أولًا حتى لا تتداخل مع كلمات عامة
   if (
     n.includes("ashwagandha") ||
     n.includes("ashwaghanda") ||
@@ -367,12 +272,167 @@ function detectCategory(name) {
     n.includes("seven x") ||
     n.includes("protein") ||
     n.includes("shaker") ||
-    n.includes("push up") ||
     n.includes("coup faim") ||
-    n.includes("bain de bouche") ||
-    n.includes("dentifrice")
+    n.includes("tri maca") ||
+    n.includes("slimy")
   ) {
     return "health";
+  }
+
+  // =========================
+  // العناية بالشعر
+  // =========================
+  // الشعر قبل العطور حتى لا يحدث أي تعارض
+  if (
+    n.includes("shampoo") ||
+    n.includes("shampoing") ||
+    n.includes("hair") ||
+    n.includes("cheveux") ||
+    n.includes("capillaire") ||
+    n.includes("coloration") ||
+    n.includes("teinture") ||
+    n.includes("amcolor") ||
+    n.includes("anti chute") ||
+    n.includes("anti-chute") ||
+    n.includes("antichute") ||
+    n.includes("anti hairfall") ||
+    n.includes("anti-dandruff") ||
+    n.includes("anti pelliculaire") ||
+    n.includes("pelliculaire") ||
+    n.includes("masque cheveux") ||
+    n.includes("masque-cheveux") ||
+    n.includes("huile cheveux") ||
+    n.includes("protective hair") ||
+    n.includes("oil replacement") ||
+    n.includes("oil-replacement") ||
+    n.includes("care & repair") ||
+    n.includes("care & repaire") ||
+    n.includes("blond") ||
+    n.includes("chatain") ||
+    n.includes("chaten") ||
+    n.includes("hair protective")
+  ) {
+    return "hair";
+  }
+
+  // =========================
+  // المكياج
+  // =========================
+  if (
+    n.includes("makeup") ||
+    n.includes("maquillage") ||
+    n.includes("lipstick") ||
+    n.includes("lip gloss") ||
+    n.includes("lipgloss") ||
+    n.includes("lip liner") ||
+    n.includes("lip balm") ||
+    n.includes("baume levres") ||
+    n.includes("foundation") ||
+    n.includes("fond de teint") ||
+    n.includes("concealer") ||
+    n.includes("conceler") ||
+    n.includes("correcteur") ||
+    n.includes("mascara") ||
+    n.includes("eyeliner") ||
+    n.includes("eye liner") ||
+    n.includes("eyeshadow") ||
+    n.includes("fard") ||
+    n.includes("blush") ||
+    n.includes("rouge") ||
+    n.includes("crayon") ||
+    n.includes("eyebrow") ||
+    n.includes("facial primer") ||
+    n.includes("primer") ||
+    n.includes("felt-tip")
+  ) {
+    return "makeup";
+  }
+
+  // =========================
+  // العطور
+  // =========================
+  // نعتمد هنا على أسماء العطور الفعلية،
+  // وليس كلمات عامة مثل girl أو box وحدها.
+  if (
+    n.includes("parfum") ||
+    n.includes("perfume") ||
+    n.includes("eau de parfum") ||
+    n.includes("veloria") ||
+    n.includes("vulcanis") ||
+    n.includes("alura") ||
+    n.includes("harem") ||
+    n.includes("inspiration") ||
+    n.includes("oriental women") ||
+    n.includes("oriental men") ||
+    n.includes("mystery girl") ||
+    n.includes("l_extreme") ||
+    n.includes("l_eclat d_or") ||
+    n.includes("glamour") ||
+    n.includes("gentleman") ||
+    n.includes("aldan") ||
+    n.includes("audace") ||
+    n.includes("actor") ||
+    n.includes("free spirit") ||
+    n.includes("homme moderne") ||
+    n.includes("collection nude") ||
+    n.includes("collection pink") ||
+    n.includes("collection apricot") ||
+    n.includes("majestic absolu") ||
+    n.includes("oud") ||
+    n.includes("velour") ||
+    n.includes("velvet bloom") ||
+    n.includes("insolite master") ||
+    n.includes("body splash queen flower") ||
+    n.includes("body splash crunchy caramel") ||
+    n.includes("body splash sweet crambola") ||
+    n.includes("body splash sweet carambola") ||
+    n.includes("shiny vanilla") ||
+    n.includes("gentleman box") ||
+    n.includes("harem box")
+  ) {
+    return "perfume";
+  }
+
+  // =========================
+  // العناية بالجسم
+  // =========================
+  if (
+    n.includes("body") ||
+    n.includes("corps") ||
+    n.includes("savon") ||
+    n.includes("soap") ||
+    n.includes("gel douche") ||
+    n.includes("gel-douche") ||
+    n.includes("shower") ||
+    n.includes("lait de douche") ||
+    n.includes("body butter") ||
+    n.includes("body lotion") ||
+    n.includes("body cream") ||
+    n.includes("body splash") ||
+    n.includes("gommage corps") ||
+    n.includes("gommage corporel") ||
+    n.includes("deodorant") ||
+    n.includes("deodorant") ||
+    n.includes("roll-on") ||
+    n.includes("roll on") ||
+    n.includes("recharge-roll-on") ||
+    n.includes("anti moustique") ||
+    n.includes("anti-moustique") ||
+    n.includes("pain relief") ||
+    n.includes("cream-apaisante") ||
+    n.includes("creme mains") ||
+    n.includes("cream main") ||
+    n.includes("creme pieds") ||
+    n.includes("cream pieds") ||
+    n.includes("aloe vera gel") ||
+    n.includes("argan oil") ||
+    n.includes("huil-d'argan") ||
+    n.includes("beurre royal") ||
+    n.includes("royal butter") ||
+    n.includes("push up") ||
+    n.includes("slimming gel")
+  ) {
+    return "body";
   }
 
   // =========================
@@ -384,22 +444,35 @@ function detectCategory(name) {
     n.includes("face") ||
     n.includes("anti tache") ||
     n.includes("anti-tache") ||
+    n.includes("anti spot") ||
     n.includes("tache") ||
     n.includes("serum") ||
-    n.includes("sérum") ||
-    n.includes("gel nettoyant") ||
-    n.includes("gel-nettoyant") ||
+    n.includes("serum") ||
+    n.includes("mousse nettoyante") ||
     n.includes("nettoyant") ||
+    n.includes("cleansing") ||
+    n.includes("micellaire") ||
+    n.includes("micellar") ||
     n.includes("moistur") ||
     n.includes("hydrat") ||
+    n.includes("ecran solaire") ||
+    n.includes("écran solaire") ||
     n.includes("sun protect") ||
     n.includes("sun protection") ||
-    n.includes("écran solaire") ||
-    n.includes("ecran solaire") ||
     n.includes("spf") ||
     n.includes("anti age") ||
     n.includes("anti-age") ||
-    n.includes("anti aging")
+    n.includes("anti aging") ||
+    n.includes("creme de jour") ||
+    n.includes("creme-de-jour") ||
+    n.includes("creme de nuit") ||
+    n.includes("creme-de-nuit") ||
+    n.includes("bb cream") ||
+    n.includes("ecran mineral") ||
+    n.includes("fluide solaire") ||
+    n.includes("lait solaire") ||
+    n.includes("after sun") ||
+    n.includes("brume rafra")
   ) {
     return "skin";
   }
@@ -412,9 +485,7 @@ function detectCategory(name) {
     n.includes("offre") ||
     n.includes("promo") ||
     n.includes("promotion") ||
-    n.includes("pack") ||
-    n.includes("coffret") ||
-    n.includes("box")
+    n.includes("coffret")
   ) {
     return "offers";
   }
@@ -422,13 +493,18 @@ function detectCategory(name) {
   // إذا لم نتعرف على المنتج
   return "skin";
 }
-  
+
+
+// أسماء الأقسام
 function categoryName(category) {
   const names = {
+    all: "كل المنتجات",
     skin: "العناية بالبشرة",
     hair: "العناية بالشعر",
     body: "العناية بالجسم",
     perfume: "العطور",
+    makeup: "المكياج",
+    health: "الصحة",
     offers: "العروض"
   };
 
