@@ -567,19 +567,27 @@ imageFiles.forEach(function (file) {
     uniqueFiles[existingIndex] = file;
   }
 });
-   products = uniqueFiles.map(function (file, index) {
-      const category = detectCategory(file.name);
+// إنشاء المنتجات من الصور الموجودة في الكتالوج فقط
+products = uniqueFiles
+  .filter(function (file) {
+    // المنتج لا يظهر في المتجر إلا إذا كان له سعر
+    // داخل قائمة منتجات الكتالوج المعتمدة
+    return getProductPrice(file.name) !== null;
+  })
+  .map(function (file, index) {
+    const category = detectCategory(file.name);
 
-      return {
-        id: index + 1,
-        name: file.name.replace(/\.[^.]+$/, ""),
-        cat: category,
-        tag: categoryName(category),
-        price: getProductPrice(file.name),
-        image: GITHUB_RAW + encodeURIComponent(file.name).replace(/%2F/g, "/")
-      };
-    });
-
+    return {
+      id: index + 1,
+      name: file.name.replace(/\.[^.]+$/, ""),
+      cat: category,
+      tag: categoryName(category),
+      price: getProductPrice(file.name),
+      image:
+        GITHUB_RAW +
+        encodeURIComponent(file.name).replace(/%2F/g, "/")
+    };
+  });
     renderProducts();
   } catch (error) {
     console.error(error);
