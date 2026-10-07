@@ -548,35 +548,7 @@ footer{
     text-align:center;
   }
 }
-/* ===== خلفية العناية بالشعر ===== */
-.hair-card{
-background-image:url("hair-background.jpg.PNG");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
 
-  border:1px solid rgba(255,255,255,.18);
-}
-
-/* جعل منطقة صورة المنتج شفافة حتى تظهر خلفية الخشب حولها */
-.hair-card .product-img{
-  background:rgba(255,255,255,.06);
-}
-
-/* معلومات المنتج */
-.hair-card .card-body{
-  background:rgba(20,20,18,.55);
-  color:white;
-}
-
-.hair-card h3{
-  color:white;
-}
-
-.hair-card .tag{
-  background:rgba(50,70,40,.75);
-  color:#e0ebd0;
-}
 /* ===== بطاقات الفروع الجديدة ===== */
 
 .categories{
