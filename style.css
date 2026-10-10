@@ -24,30 +24,83 @@ body{
   margin:auto;
 }
 
-/* الهيدر */
+/* ===== هيدر فاخر لمتجر ARVEA by Mohamed ===== */
+
 .topbar{
-  background:var(--green);
-  color:var(--white);
+background:linear-gradient(120deg,#F8F3E8,#E8E0CF);
+color:var(–text);
+border-bottom:1px solid rgba(107,79,58,.18);
+box-shadow:0 3px 14px rgba(65,48,30,.06);
 }
 
 .nav{
-  min-height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+min-height:86px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
 }
 
 .logo{
-  color:white;
-  text-decoration:none;
-  font-size:22px;
-  font-weight:bold;
+color:var(–brown);
+text-decoration:none;
+font-family:Georgia,“Times New Roman”,serif;
+font-size:29px;
+font-weight:bold;
+letter-spacing:1.5px;
+line-height:1.2;
+white-space:nowrap;
 }
 
 .logo span{
-  font-size:14px;
-  font-weight:normal;
+display:block;
+margin-top:5px;
+color:var(–green-dark);
+font-family:Arial,sans-serif;
+font-size:12px;
+font-weight:normal;
+letter-spacing:3px;
+text-align:center;
+}
+
+.nav nav{
+display:flex;
+gap:20px;
+}
+
+.nav nav a,
+.cart{
+color:var(–brown);
+text-decoration:none;
+font-weight:bold;
+transition:color .2s ease;
+}
+
+.nav nav a:hover,
+.cart:hover{
+color:var(–green-dark);
+}
+
+/* الهيدر على الهاتف */
+@media(max-width:600px){
+
+.nav{
+min-height:auto;
+padding:16px 0;
+justify-content:center;
+gap:14px;
+}
+
+.logo{
+font-size:27px;
+text-align:center;
+}
+
+.logo span{
+font-size:11px;
+letter-spacing:2.5px;
+}
+
 }
 
 .nav nav{
