@@ -796,3 +796,141 @@ footer{
   }
 
 }
+
+/* ===== ARVEA by Mohamed — Luxury Header ===== */
+
+.topbar{
+  background:linear-gradient(
+    120deg,
+    #FAF8F1 0%,
+    #EDE5D6 55%,
+    #DCE5D0 100%
+  ) !important;
+  color:var(--text);
+  border-bottom:1px solid rgba(107,79,58,.22);
+  box-shadow:0 5px 18px rgba(47,58,43,.08);
+}
+
+.nav{
+  min-height:96px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  color:var(--brown) !important;
+  text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:29px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+  line-height:1.25;
+  white-space:nowrap;
+  text-shadow:0 1px 1px rgba(107,79,58,.08);
+}
+
+.logo span{
+  display:block;
+  margin-top:7px;
+  color:var(--green-dark) !important;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+.nav nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.nav nav a,
+.nav .cart,
+.cart{
+  color:var(--brown) !important;
+  text-decoration:none;
+  font-weight:bold;
+  transition:color .2s ease;
+}
+
+.nav nav a:hover,
+.nav .cart:hover,
+.cart:hover{
+  color:var(--green-dark) !important;
+}
+
+/* لمسة زخرفية أنيقة أسفل العنوان */
+.logo span::after{
+  content:"";
+  display:block;
+  width:42px;
+  height:2px;
+  margin:7px auto 0;
+  background:linear-gradient(
+    90deg,
+    var(--green-dark),
+    var(--brown)
+  );
+  border-radius:2px;
+}
+
+/* تحسين تناسق ألوان المتجر */
+h2,
+.card h3,
+.hero h1{
+  color:var(--brown);
+}
+
+.eyebrow,
+.price{
+  color:var(--green-dark);
+}
+
+.add,
+.btn{
+  background:var(--green-dark);
+}
+
+.add:hover{
+  background:#526B3D;
+}
+
+/* الهيدر على الهاتف */
+@media(max-width:600px){
+
+  .nav{
+    min-height:auto;
+    padding:17px 0 13px;
+    flex-direction:column;
+    justify-content:center;
+    gap:14px;
+  }
+
+  .logo{
+    font-size:26px;
+    text-align:center;
+    white-space:normal;
+  }
+
+  .logo span{
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  .nav nav{
+    width:100%;
+    gap:10px 16px;
+    justify-content:center;
+  }
+
+  .nav nav a,
+  .nav .cart{
+    font-size:12px;
+  }
+}
