@@ -1,124 +1,244 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ARVEA by Mohamed - متجر منتجات الجمال والعناية">
-  <title>ARVEA by Mohamed</title>
+  <meta name="theme-color" content="#f5f5ed">
+  <meta name="description" content="ARVEA by Mohamed - اكتشف منتجات الجمال والعناية في الجزائر">
+  <title>ARVEA by Mohamed | جمالك بطبيعتك</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="topbar">
   <div class="container nav">
-    <a class="logo" href="#">ARVEA <span>by Mohamed</span></a>
-    <nav>
+    <a class="logo" href="#" aria-label="ARVEA by Mohamed">
+      ARVEA <span>by Mohamed</span>
+    </a>
+
+    <nav aria-label="القائمة الرئيسية">
+      <a href="#">الرئيسية</a>
       <a href="#products">المنتجات</a>
       <a href="#categories">الأقسام</a>
       <a href="#offers">العروض</a>
       <a href="#contact">تواصل معنا</a>
     </nav>
-    <a class="cart" href="#cart">🛒 السلة <b id="cartCount">0</b></a>
+
+    <a class="cart" href="#cart">
+      <span>السلة</span>
+      <b id="cartCount">0</b>
+    </a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-content">
-    <div>
-      <p class="eyebrow">BEAUTY • CARE • WELLNESS</p>
-      <h1>جمالك يبدأ من<br><strong>اختيارك الصحيح</strong></h1>
-      <p>اكتشف منتجات ARVEA للعناية والجمال، واختر ما يناسبك بسهولة.</p>
-      <a class="btn" href="#products">تصفح المنتجات</a>
+<main>
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-copy">
+        <p class="eyebrow">BEAUTY • CARE • WELLNESS</p>
+
+        <h1>
+          اكتشف جمالك الطبيعي
+          <br>
+          <strong>بلمسة من الطبيعة</strong>
+        </h1>
+
+        <p class="hero-description">
+          اكتشف عالم ARVEA من منتجات العناية والجمال،
+          واختر منتجاتك المفضلة بكل سهولة.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#products">تسوق الآن ←</a>
+          <a class="btn secondary" href="#categories">اكتشف الأقسام</a>
+        </div>
+
+        <div class="hero-note">
+          <span class="hero-note-mark">✦</span>
+          جمالك، عنايتك، واختيارك الخاص
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-label">
+          <span>ARVEA</span>
+          <span>BEAUTY & CARE</span>
+        </div>
+
+        <div class="hero-visual-center">
+          <span class="hero-decor">✳</span>
+          <p>YOUR BEAUTY</p>
+          <h2>جمالك<br>بطبيعتك</h2>
+          <span class="hero-visual-line"></span>
+          <small>Discover your daily ritual</small>
+        </div>
+
+        <div class="hero-product-tag">
+          <div class="hero-product-symbol">A</div>
+          <div>
+            <strong>اكتشف منتجات ARVEA</strong>
+            <small>عناية تناسب روتينك اليومي</small>
+          </div>
+          <a href="#products" aria-label="اكتشف المنتجات">↗</a>
+        </div>
+      </div>
+
     </div>
-    <div class="hero-card">
-      <span>ARVEA</span>
-      <strong>عروض مميزة</strong>
-      <small>سيتم إضافة المنتجات والأسعار تدريجيًا</small>
+  </section>
+
+  <section id="categories" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">EXPLORE OUR WORLD</p>
+          <h2>اكتشف عالم العناية</h2>
+        </div>
+        <p class="section-description">
+          كل ما تحتاجه لجمالك في مكان واحد
+        </p>
+      </div>
+
+      <div class="categories">
+
+        <button type="button" class="category-card category-hair"
+          onclick="filterProducts('hair')">
+          <span class="category-icon">💇‍♀️</span>
+          <strong>العناية بالشعر</strong>
+          <small>شعر صحي وجمال طبيعي</small>
+        </button>
+
+        <button type="button" class="category-card category-skin"
+          onclick="filterProducts('skin')">
+          <span class="category-icon">✦</span>
+          <strong>العناية بالبشرة</strong>
+          <small>بشرة نضرة ومتألقة</small>
+        </button>
+
+        <button type="button" class="category-card category-perfume"
+          onclick="filterProducts('perfume')">
+          <span class="category-icon">❋</span>
+          <strong>العطور</strong>
+          <small>رائحة تروي قصتك</small>
+        </button>
+
+        <button type="button" class="category-card category-body"
+          onclick="filterProducts('body')">
+          <span class="category-icon">♧</span>
+          <strong>العناية بالجسم</strong>
+          <small>عناية يومية متكاملة</small>
+        </button>
+
+        <button type="button" class="category-card category-makeup"
+          onclick="filterProducts('makeup')">
+          <span class="category-icon">◇</span>
+          <strong>المكياج</strong>
+          <small>لمسة جمالك الخاصة</small>
+        </button>
+
+        <button type="button" class="category-card category-health"
+          onclick="filterProducts('health')">
+          <span class="category-icon">✚</span>
+          <strong>الصحة</strong>
+          <small>العناية بصحتك يوميًا</small>
+        </button>
+
+        <button type="button" class="category-card category-offers"
+          onclick="filterProducts('offers')">
+          <span class="category-icon">✧</span>
+          <strong>العروض</strong>
+          <small>اختيارات مميزة بأسعار أفضل</small>
+        </button>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="categories" class="section">
-<div class="categories">
-
-  <button class="category-card category-hair" onclick="filterProducts('hair')">
-    <span class="category-icon">💇‍♀️</span>
-    <strong>العناية بالشعر</strong>
-    <small>شعر صحي وجمال طبيعي</small>
-  </button>
-
-  <button class="category-card category-skin" onclick="filterProducts('skin')">
-    <span class="category-icon">🌸</span>
-    <strong>العناية بالبشرة</strong>
-    <small>بشرة نضرة ومتألقة</small>
-  </button>
-
-  <button class="category-card category-perfume" onclick="filterProducts('perfume')">
-    <span class="category-icon">🌹</span>
-    <strong>العطور</strong>
-    <small>رائحة تروي قصتك</small>
-  </button>
-
-  <button class="category-card category-body" onclick="filterProducts('body')">
-    <span class="category-icon">🧴</span>
-    <strong>العناية بالجسم</strong>
-    <small>جسم أكثر نظارة كل يوم</small>
-  </button>
-
-  <button class="category-card category-makeup" onclick="filterProducts('makeup')">
-    <span class="category-icon">💄</span>
-    <strong>المكياج</strong>
-    <small>لمسة جمالك الخاصة</small>
-  </button>
-
-  <button class="category-card category-health" onclick="filterProducts('health')">
-    <span class="category-icon">❤️</span>
-    <strong>الصحة</strong>
-    <small>العناية بصحتك يوميًا</small>
-  </button>
-
-  <button class="category-card category-offers" onclick="filterProducts('offers')">
-    <span class="category-icon">🎁</span>
-    <strong>العروض</strong>
-    <small>اختيارات مميزة بأسعار أفضل</small>
-  </button>
-
-</div>
-
-<section id="offers" class="promo">
-  <div class="container promo-inner">
-    <div><p class="eyebrow">SPECIAL OFFERS</p><h2>عروض ومنتجات مختارة</h2><p>هذه المنطقة جاهزة لإضافة العروض الجديدة لاحقًا.</p></div>
-    <a class="btn light" href="#products">اكتشف الآن</a>
-  </div>
-</section>
-
-<section id="products" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div><p class="eyebrow">OUR PRODUCTS</p><h2>منتجات المتجر</h2></div>
-      <input id="search" class="search" type="search" placeholder="ابحث عن منتج..." oninput="renderProducts()">
+  <section id="offers" class="promo">
+    <div class="container promo-inner">
+      <div>
+        <p class="eyebrow">SPECIAL OFFERS</p>
+        <h2>جمالك يستحق الأفضل</h2>
+        <p>اكتشف المنتجات والعروض المتاحة في متجرنا.</p>
+      </div>
+      <a class="btn light" href="#products">اكتشف العروض ←</a>
     </div>
-    <div id="productGrid" class="grid"></div>
-  </div>
-</section>
+  </section>
 
-<section id="cart" class="section cart-section">
-  <div class="container">
-    <div class="section-head"><div><p class="eyebrow">YOUR ORDER</p><h2>سلة المشتريات</h2></div></div>
-    <div id="cartItems" class="cart-box">السلة فارغة حاليًا.</div>
-    <div class="order-actions">
-      <a id="whatsappBtn" class="btn whatsapp" target="_blank" href="https://wa.me/213797072478">اطلب عبر WhatsApp</a>
-      <a class="btn secondary" href="tel:0797072478">اتصل بنا</a>
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>منتجات ARVEA</h2>
+          <p class="section-description">
+            اختر منتجاتك المفضلة واكتشف تفاصيلها.
+          </p>
+        </div>
+
+        <input
+          id="search"
+          class="search"
+          type="search"
+          placeholder="ابحث عن منتج..."
+          aria-label="البحث عن منتج"
+          oninput="renderProducts()">
+      </div>
+
+      <div id="productGrid" class="grid"></div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="cart" class="section cart-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">YOUR ORDER</p>
+          <h2>سلة المشتريات</h2>
+        </div>
+      </div>
+
+      <div id="cartItems" class="cart-box">
+        السلة فارغة حاليًا.
+      </div>
+
+      <div class="order-actions">
+        <a id="whatsappBtn" class="btn whatsapp"
+          target="_blank" rel="noopener noreferrer"
+          href="https://wa.me/213797072478">
+          اطلب عبر WhatsApp
+        </a>
+
+        <a class="btn secondary" href="tel:0797072478">
+          اتصل بنا
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer id="contact">
   <div class="container footer">
-    <div><div class="logo">ARVEA <span>by Mohamed</span></div><p>متجر إلكتروني للجمال والعناية في الجزائر.</p></div>
-    <div><strong>الطلب والتواصل</strong><p>0797 07 24 78</p><p>WhatsApp متاح للطلبات والاستفسارات</p></div>
+    <div>
+      <div class="logo">ARVEA <span>by Mohamed</span></div>
+      <p>متجر إلكتروني للجمال والعناية في الجزائر.</p>
+    </div>
+
+    <div>
+      <strong>الطلب والتواصل</strong>
+      <p>0797 07 24 78</p>
+      <p>WhatsApp متاح للطلبات والاستفسارات</p>
+    </div>
   </div>
-  <div class="copyright">© 2026 ARVEA by Mohamed — جميع الحقوق محفوظة</div>
+
+  <div class="copyright">
+    © 2026 ARVEA by Mohamed — جميع الحقوق محفوظة
+  </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
