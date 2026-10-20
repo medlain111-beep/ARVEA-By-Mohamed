@@ -934,3 +934,166 @@ h2,
     font-size:12px;
   }
 }
+/* ===== ARVEA by Mohamed | Dark Green & Gold Luxury Header ===== */
+
+/* الهوية اللونية */
+:root{
+–green:#A8C686;
+–green-dark:#183D2B;
+–green-soft:#EEF4E6;
+–brown:#6B4F3A;
+–cream:#FAF8F1;
+–white:#FFFFFF;
+–text:#2F3A2B;
+–gold:#D8B66A;
+–gold-light:#F3DFAB;
+}
+
+/* خلفية رأس المتجر */
+.topbar{
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(
+ellipse at 50% 0%,
+rgba(216,182,106,.15),
+transparent 65%
+),
+linear-gradient(
+125deg,
+#10291D 0%,
+#1B422E 48%,
+#10271C 100%
+) !important;
+color:#FAF8F1 !important;
+border-bottom:1px solid rgba(216,182,106,.65);
+box-shadow:0 5px 22px rgba(12,30,20,.20);
+}
+
+/* خط ذهبي رفيع أسفل الرأس */
+.topbar::after{
+content:””;
+position:absolute;
+bottom:0;
+left:10%;
+width:80%;
+height:1px;
+background:linear-gradient(
+90deg,
+transparent,
+#D8B66A,
+#F3DFAB,
+#D8B66A,
+transparent
+);
+pointer-events:none;
+}
+
+/* ترتيب العنوان والقائمة */
+.topbar .nav{
+position:relative;
+z-index:1;
+min-height:105px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+/* اسم ARVEA */
+.topbar .logo{
+color:#F3DFAB !important;
+text-decoration:none;
+font-family:Georgia,“Times New Roman”,serif;
+font-size:34px;
+font-weight:bold;
+letter-spacing:2.5px;
+line-height:1.2;
+text-align:center;
+white-space:nowrap;
+text-shadow:0 2px 14px rgba(216,182,106,.15);
+}
+
+/* عبارة by Mohamed */
+.topbar .logo span{
+display:block;
+margin-top:7px;
+color:#D8B66A !important;
+font-family:Georgia,“Times New Roman”,serif;
+font-size:13px;
+font-weight:normal;
+letter-spacing:2.5px;
+text-align:center;
+}
+
+/* زخرفة ذهبية تحت الاسم */
+.topbar .logo span::after{
+content:””;
+display:block;
+width:55px;
+height:1px;
+margin:9px auto 0;
+background:linear-gradient(
+90deg,
+transparent,
+#D8B66A,
+transparent
+);
+}
+
+/* روابط القائمة */
+.topbar .nav nav{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.topbar .nav nav a,
+.topbar .nav .cart,
+.topbar .cart{
+color:#F8F3E8 !important;
+text-decoration:none;
+font-weight:bold;
+transition:color .2s ease;
+}
+
+.topbar .nav nav a:hover,
+.topbar .nav .cart:hover,
+.topbar .cart:hover{
+color:#F3DFAB !important;
+}
+
+/* الهاتف */
+@media(max-width:600px){
+
+.topbar .nav{
+min-height:auto;
+padding:20px 0 17px;
+flex-direction:column;
+justify-content:center;
+gap:17px;
+}
+
+.topbar .logo{
+font-size:30px;
+white-space:normal;
+}
+
+.topbar .logo span{
+font-size:12px;
+letter-spacing:2px;
+}
+
+.topbar .nav nav{
+width:100%;
+gap:12px 17px;
+justify-content:center;
+}
+
+.topbar .nav nav a,
+.topbar .nav .cart{
+font-size:13px;
+}
+}
